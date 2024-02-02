@@ -32,8 +32,7 @@ export default function Login() {
 			const response = await login(body);
 			console.log(response);
 			console.log('no erorr thrown');
-
-			router.push('/profile');
+			router.push(`/profile/?uid=${response.data.userId}`);
 		} catch (error) {
 			console.log(error);
 			if (error?.response.data === 'USER_NOT_FOUND') {

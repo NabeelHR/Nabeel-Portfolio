@@ -23,6 +23,11 @@ module.exports = {
 		// 	// => @media (min-width: 1280px) { ... }
 		// },
 		extend: {
+			minHeight: {
+				32: '8rem',
+				48: '12rem',
+				64: '16rem',
+			},
 			minWidth: {
 				16: '4rem',
 				72: '16rem',

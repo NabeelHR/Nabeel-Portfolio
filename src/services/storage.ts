@@ -37,4 +37,14 @@ const uploadImg = async (image: any, cb: any) => {
 	});
 };
 
-export { uploadImg };
+function getByUrl(url) {
+	const xhr = new XMLHttpRequest();
+	xhr.responseType = 'blob';
+	xhr.onload = (event) => {
+		const blob = xhr.response;
+	};
+	xhr.open('GET', url);
+	xhr.send();
+}
+
+export { uploadImg, getByUrl };

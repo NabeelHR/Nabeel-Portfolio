@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import Button from './button';
-// import { uploadImg } from '@/services/storage';
-import { uploadImage } from '@/services/apis';
+import { uploadImg } from '@/services/storage';
+import { uploadImgData } from '@/services/apis';
+import { useSearchParams } from '../../../node_modules/next/navigation';
 
 const UploadAndDisplayImage = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
+	const searchParams = useSearchParams();
+	console.log(searchParams.get('uid'));
+
 	const onUpload = (event: any) => {
 		console.log(event.target.files[0]);
 		console.log(event.target.files[0]);
 		setSelectedImage(event.target.files[0]);
-		uploadImage(event.target.files[0], 'test@test.com');
-		// uploadImg(event.target.files[0], (_) => {});
+		uploadImg(event.target.files[0], (url: string) => {
+			uploadImgData(searchParams.get('uid'), url);
+		});
 	};
 
 	return (
-		<div>
-			<div>Upload and Display Image </div>
+		<div className='flex flex-col border border-solid rounded-md my-4 border-green-600 min-h-64 h-auto p-4'>
+			<div className='mx-auto'>Upload and Display Image </div>
 
 			{selectedImage && (
 				<div className='space-y-2 py-2'>
@@ -28,7 +33,12 @@ const UploadAndDisplayImage = () => {
 				</div>
 			)}
 
-			<input type='file' name='myImage' onChange={onUpload} />
+			<input
+				className=' file:bg-primary file:bg-primaryHov file:text-primaryText file:rounded-md'
+				type='file'
+				name='myImage'
+				onChange={onUpload}
+			/>
 		</div>
 	);
 };

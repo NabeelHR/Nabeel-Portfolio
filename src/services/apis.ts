@@ -22,25 +22,24 @@ const login = async (userDetails: userLogin) => {
 	return response;
 };
 
-const uploadImage = async (file: any, email: string) => {
-	let data = new FormData();
-	console.log('data init?');
-	data.append('cute-file', file, file.name);
-	console.log(data);
-	console.log('data changin?');
-
-	data.append('email', email);
-	console.log(data);
-
-	const response = await axios.post(url + '/upload', data, {
-		headers: {
-			accept: 'application/json',
-			'Accept-Language': 'en-US,en;q=0.8',
-			'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
-		},
+const uploadImgData = async (uid: string, imgUrl: string) => {
+	console.log('sending request for urlsss');
+	const response = await axios.post(url + '/imageData', {
+		uid: parseInt(uid),
+		url: imgUrl,
 	});
-	console.log('no error');
 	return response;
 };
 
-export { register, login, uploadImage };
+const fetchImgData = async (uid: string, cb) => {
+	console.log('sending request for urlsss');
+	const response = await axios.get(url + '/fetchImgData', {
+		params: {
+			uid: parseInt(uid),
+		},
+	});
+	cb(response);
+	return response;
+};
+
+export { register, login, uploadImgData, fetchImgData };
