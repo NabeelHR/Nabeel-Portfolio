@@ -45,7 +45,7 @@ export default function Signup() {
 
 	return (
 		<div className='flex flex-col  bg-themeBg2 space-y-2 p-4 flex:6 w-screen sm:w-mid mx-auto mt-16 sm:mt-32 rounded-lg'>
-			Let's create a Nabster account!
+			{"Let's create a Nabster account!"}
 			<Input
 				label='email'
 				type='email'
