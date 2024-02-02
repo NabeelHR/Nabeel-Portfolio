@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { fetchImgData } from '@/services/apis';
 import { useSearchParams } from '../../../node_modules/next/navigation';
 
@@ -32,5 +32,9 @@ function Gallery() {
 		</div>
 	);
 }
-
-export default Gallery;
+const Wrapper = () => (
+	<Suspense fallback={<div>Loading data... You may not be logged</div>}>
+		<Gallery />
+	</Suspense>
+);
+export default Wrapper;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import Button from './button';
 import { uploadImg } from '@/services/storage';
 import { uploadImgData } from '@/services/apis';
@@ -42,5 +42,9 @@ const UploadAndDisplayImage = () => {
 		</div>
 	);
 };
-
-export default UploadAndDisplayImage;
+const Wrapper = () => (
+	<Suspense fallback={<div>Loading data... You may not be logged</div>}>
+		<UploadAndDisplayImage />
+	</Suspense>
+);
+export default Wrapper;

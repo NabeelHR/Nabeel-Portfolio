@@ -21,7 +21,7 @@ function Profile() {
 		}
 	};
 	return (
-		<div className='flex flex-col mx-auto'>
+		<div className='flex px-4 flex-col mx-auto'>
 			<div className='w-32 place-self-end	'>
 				<Button
 					label='logout'
@@ -32,7 +32,7 @@ function Profile() {
 			<div className='flex space-x-8 w-2/3 mx-auto'>
 				<div>Welcome to you your photo management app!</div>
 				<div>
-					Or Click here to view your past uploads!
+					Or click here to view your past uploads!
 					<Button label={label} onClick={() => toggle()} />
 				</div>
 			</div>
