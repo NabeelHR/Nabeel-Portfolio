@@ -23,7 +23,7 @@ const login = async (userDetails: userLogin) => {
 	return response;
 };
 
-const uploadImgData = async (uid: string, imgUrl: string) => {
+const uploadImgData = async (uid: any, imgUrl: string) => {
 	console.log('sending request for urlsss');
 	const response = await axios.post(url + '/imageData', {
 		uid: parseInt(uid),
@@ -32,7 +32,7 @@ const uploadImgData = async (uid: string, imgUrl: string) => {
 	return response;
 };
 
-const fetchImgData = async (uid: string, cb) => {
+const fetchImgData = async (uid: any, cb: any) => {
 	console.log('sending request for urlsss');
 	const response = await axios.get(url + '/fetchImgData', {
 		params: {

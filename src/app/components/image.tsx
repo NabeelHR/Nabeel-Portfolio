@@ -13,9 +13,9 @@ const UploadAndDisplayImage = () => {
 		console.log(event.target.files[0]);
 		console.log(event.target.files[0]);
 		setSelectedImage(event.target.files[0]);
-		uploadImg(event.target.files[0], (url: string) => {
-			uploadImgData(searchParams.get('uid'), url);
-		});
+		uploadImg(event.target.files[0], (url: string) =>
+			uploadImgData(searchParams.get('uid'), url)
+		);
 	};
 
 	return (
