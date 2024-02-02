@@ -66,7 +66,7 @@ export default function Login() {
 				}}
 			/>
 			{errormsg ? (
-				<div className='text-purple-900 font-bold'>{errormsg}</div>
+				<div className='text-purple-900 font-bold underline'>{errormsg}</div>
 			) : (
 				<></>
 			)}

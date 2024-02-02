@@ -73,13 +73,11 @@ export default function Signup() {
 				}}
 			/>
 			{errormsg ? (
-				<div className='text-purple-900 font-bold'>{errormsg}</div>
+				<div className='text-purple-900 font-bold underline'>{errormsg}</div>
 			) : (
 				<></>
 			)}
 			<Button onClick={onSubmit} label='Register' />
-			{/* <Link className='w-full mx-auto sm:max-w-standardBtn' href='/profile'>
-			</Link> */}
 			<Link className='w-full mx-auto sm:max-w-standardBtn' href='/login'>
 				<Button onClick={() => {}} label='Login with existing account' />
 			</Link>

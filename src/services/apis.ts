@@ -1,5 +1,4 @@
 import { userRegistration, userLogin } from '@/types/interfaces';
-import FormData from 'form-data';
 
 const axios = require('axios').default;
 // const url = 'http://localhost:8080';

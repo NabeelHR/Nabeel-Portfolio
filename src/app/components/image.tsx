@@ -6,6 +6,7 @@ import { useSearchParams } from '../../../node_modules/next/navigation';
 
 const UploadAndDisplayImage = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
+	const [displayMsg, setDisplayMsg] = useState('Upload and Display Image');
 	const searchParams = useSearchParams();
 	console.log(searchParams.get('uid'));
 
@@ -13,14 +14,16 @@ const UploadAndDisplayImage = () => {
 		console.log(event.target.files[0]);
 		console.log(event.target.files[0]);
 		setSelectedImage(event.target.files[0]);
-		uploadImg(event.target.files[0], (url: string) =>
-			uploadImgData(searchParams.get('uid'), url)
-		);
+		setDisplayMsg('uploading');
+		uploadImg(event.target.files[0], (url: string) => {
+			uploadImgData(searchParams.get('uid'), url);
+			setDisplayMsg('Image uploaded! Upload more');
+		});
 	};
 
 	return (
 		<div className='flex flex-col border border-solid rounded-md my-4 border-green-600 min-h-64 h-auto p-4'>
-			<div className='mx-auto'>Upload and Display Image </div>
+			<div className='mx-auto'>{displayMsg}</div>
 
 			{selectedImage && (
 				<div className='space-y-2 py-2'>
@@ -29,7 +32,6 @@ const UploadAndDisplayImage = () => {
 						width={'250px'}
 						src={URL.createObjectURL(selectedImage)}
 					/>
-					<Button label='Remove' onClick={() => setSelectedImage(null)} />
 				</div>
 			)}
 
