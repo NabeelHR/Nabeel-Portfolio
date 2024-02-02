@@ -4,15 +4,17 @@ import React, { useState } from 'react';
 import Button from '../components/button';
 import UploadAndDisplayImage from '../components/image';
 import Gallery from '../components/gallery';
+import { useRouter } from '../../../node_modules/next/navigation';
 
 function Profile() {
 	const [view, setView] = useState('upload');
-	const [label, setLabel] = useState('Saved Photos');
-	// console.log(props);
+	const [label, setLabel] = useState('View Saved Photos');
+	const router = useRouter();
+
 	const toggle = (e) => {
 		if (view == 'display') {
 			setView('upload');
-			setLabel('Saved Photos');
+			setLabel('View Saved Photos');
 		} else {
 			setView('display');
 			setLabel('Upload more photos');
@@ -20,6 +22,13 @@ function Profile() {
 	};
 	return (
 		<div className='flex flex-col mx-auto'>
+			<div className='w-32 place-self-end	'>
+				<Button
+					label='logout'
+					custom='bg-red-800'
+					onClick={() => router.push(`/login`)}
+				/>
+			</div>
 			<div className='flex space-x-8 w-2/3 mx-auto'>
 				<div>Welcome to you your photo management app!</div>
 				<div>
