@@ -3,7 +3,8 @@ import FormData from 'form-data';
 
 const axios = require('axios').default;
 // const url = 'http://localhost:8080';
-const url = 'https://nabster-d2c4a.web.app/';
+// const url = 'https://nabster-d2c4a.web.app/';
+const url = 'https://nabster-backend-server.onrender.com';
 
 const register = async (userDetails: userRegistration) => {
 	const response = await axios.post(url + '/register', {
