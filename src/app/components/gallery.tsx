@@ -10,7 +10,7 @@ function Gallery() {
 
 	useEffect(() => {
 		fetchImgData(searchParams.get('uid'), (resp) => {
-			setImages(resp.data.map((el) => el.url));
+			setImages(resp.data.map((el: any) => el.url));
 			setPlaceholderMsg('You have no images uploaded, go back to upload more.');
 		});
 	}, [images]);
