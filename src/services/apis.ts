@@ -2,7 +2,8 @@ import { userRegistration, userLogin } from '@/types/interfaces';
 import FormData from 'form-data';
 
 const axios = require('axios').default;
-const url = 'http://localhost:8080';
+// const url = 'http://localhost:8080';
+const url = 'https://nabster-d2c4a.web.app/';
 
 const register = async (userDetails: userRegistration) => {
 	const response = await axios.post(url + '/register', {
