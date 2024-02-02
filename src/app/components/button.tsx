@@ -21,10 +21,9 @@ const Button: React.FC<Props> = ({
 	...rest
 }) => (
 	<button
-		className={`m-0 btn ${variant ? 'bg-primary' : 'bg-teal-600'} ${
+		className={`m-0 h-8 btn ${variant ? 'bg-primary' : 'bg-teal-600'} ${
 			disabled ? 'disabled' : ''
-		} ${custom ? custom : ''}  ${
-			size ? size : 'w-full'
+		} ${custom ? custom : ''} w-full mx-auto
 		} rounded-md hover:bg-primaryHov sm:max-w-standardBtn`}
 		onClick={() => {
 			onClick();

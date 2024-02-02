@@ -28,12 +28,19 @@ module.exports = {
 				72: '16rem',
 			},
 			maxWidth: {
-				96: '24rem',
+				96: '32rem',
+			},
+			width: {
+				mid: '40rem',
 			},
 			colors: {
 				primary: '#194440',
 				primaryHov: '#12322f',
 				primarySelected: '#4E1F7A',
+
+				themeBg: '#B2D76D',
+
+				themeBg2: '#76B46B',
 
 				primaryText: '#E7E3BD',
 
