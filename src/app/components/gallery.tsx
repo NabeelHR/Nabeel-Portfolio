@@ -8,12 +8,16 @@ function Gallery() {
 	const [placeholderMsg, setPlaceholderMsg] = useState('loading');
 	console.log(images);
 
+	/* eslint no-use-before-define: 0 */ // --> OFF
 	useEffect(() => {
+		/* eslint-disable */
 		fetchImgData(searchParams.get('uid'), (resp) => {
+			/* eslint-enable */
 			setImages(resp.data.map((el: any) => el.url));
 			setPlaceholderMsg('You have no images uploaded, go back to upload more.');
 		});
 	}, [images]);
+	/* eslint no-use-before-define: 2 */ // --> ON
 
 	return (
 		<div className='flex flex-col w-full'>
