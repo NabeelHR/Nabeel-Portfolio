@@ -37,7 +37,7 @@ export default function Signup() {
 			const response = await register(body);
 			console.log(response);
 			router.push('/login');
-		} catch (error) {
+		} catch (error: any) {
 			setErrormsg(error.response.data);
 			console.log('oopsie somethiig failed');
 		}

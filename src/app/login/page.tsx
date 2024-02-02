@@ -33,11 +33,11 @@ export default function Login() {
 			console.log(response);
 			console.log('no erorr thrown');
 			router.push(`/profile/?uid=${response.data.userId}`);
-		} catch (error) {
+		} catch (error: any) {
 			console.log(error);
-			if (error?.response.data === 'USER_NOT_FOUND') {
+			if (error.response.data === 'USER_NOT_FOUND') {
 				setErrormsg('This user does not exist');
-			} else if (error?.response.data === 'INVALID_PASSWORD') {
+			} else if (error.response.data === 'INVALID_PASSWORD') {
 				setErrormsg('Incorrect password, please try again');
 			}
 			console.log('oopsie somethiig failed');
