@@ -11,7 +11,7 @@ function Profile() {
 	const [label, setLabel] = useState('View Saved Photos');
 	const router = useRouter();
 
-	const toggle = (e) => {
+	const toggle = () => {
 		if (view == 'display') {
 			setView('upload');
 			setLabel('View Saved Photos');
@@ -33,7 +33,7 @@ function Profile() {
 				<div>Welcome to you your photo management app!</div>
 				<div>
 					Or Click here to view your past uploads!
-					<Button label={label} onClick={toggle} />
+					<Button label={label} onClick={() => toggle()} />
 				</div>
 			</div>
 

@@ -1,13 +1,6 @@
 import { initializeApp } from 'firebase/app';
 
-import {
-	getStorage,
-	ref,
-	uploadBytes,
-	getDownloadURL,
-	listAll,
-	list,
-} from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyALJvZ66UjdqrHHRkd-6lc5STRSUdI4xm0',
@@ -29,22 +22,12 @@ const storageRef = ref(storage);
 const uploadImg = async (image: any, cb: any) => {
 	if (image == null) return;
 	const imageRef = ref(storage, `images/${image.name}`);
-	uploadBytes(imageRef, image).then((snapshot) => {
-		getDownloadURL(snapshot.ref).then((url) => {
+	uploadBytes(imageRef, image).then((snapshot: any) => {
+		getDownloadURL(snapshot.ref).then((url: any) => {
 			cb(url);
 			// setImageUrls((prev) => [...prev, url]);
 		});
 	});
 };
 
-function getByUrl(url) {
-	const xhr = new XMLHttpRequest();
-	xhr.responseType = 'blob';
-	xhr.onload = (event) => {
-		const blob = xhr.response;
-	};
-	xhr.open('GET', url);
-	xhr.send();
-}
-
-export { uploadImg, getByUrl };
+export { uploadImg };

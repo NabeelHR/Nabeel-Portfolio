@@ -1,18 +1,4 @@
 'use client'; // This is a client component 👈🏽
-// import { useRef } from 'react';
-
-// const Input = () => {
-// 	const inputRef = useRef<HTMLElement>();
-// 	return (
-// 		<div className='font-extrabold bg-slate-600 h-full'>
-// 			lol
-// 			<input
-// 				className={`w-full px-2 pb-1.5 text-primary outline-none text-base font-light rounded-md`}
-// 				type='text'
-// 			/>
-// 		</div>
-// 	);
-// };
 
 import React from 'react';
 import { useRef } from 'react';
