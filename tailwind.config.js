@@ -43,7 +43,7 @@ module.exports = {
 				primaryHov: '#12322f',
 				primarySelected: '#4E1F7A',
 
-				themeBg: '#B2D76D',
+				themeBg: '#85a987',
 
 				themeBg2: '#76B46B',
 
@@ -70,5 +70,5 @@ module.exports = {
 			// - Success 9578F7
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 };

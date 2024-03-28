@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Tabs from './tabs/index';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,9 +19,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className='flex h-screen bg-themeBg p-0'>
 				<div className='flex flex-col w-full'>
-					<div className='flex bg-themeBg2 font-bold text-4xl w-full h-32 py-4 pl-2 align-middle'>
-						Welcome to Nabster Storage
-					</div>
+					<Tabs />
 					{children}
 				</div>
 			</body>
