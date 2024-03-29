@@ -23,6 +23,11 @@ module.exports = {
 		// 	// => @media (min-width: 1280px) { ... }
 		// },
 		extend: {
+			spacing: {
+				100: '25rem',
+				120: '30rem',
+				160: '40rem',
+			},
 			minHeight: {
 				32: '8rem',
 				48: '12rem',
@@ -41,11 +46,15 @@ module.exports = {
 			colors: {
 				primary: '#194440',
 				primaryHov: '#12322f',
+				primaryDark: '#132523',
 				primarySelected: '#4E1F7A',
 
-				themeBg: '#85a987',
+				themeBg: '#d3e2e0',
 
-				themeBg2: '#76B46B',
+				card: '#b4ceca',
+				cardHov: '#bbd2cf',
+
+				themeBg2: '#c4d8d5',
 
 				primaryText: '#E7E3BD',
 
@@ -55,7 +64,7 @@ module.exports = {
 				error: '#E32987',
 				success: '#9578F7',
 
-				secondary: '#682F7A',
+				secondary: '#291f30',
 				secondaryHov: '#D8D8D3',
 				darkBg: '#682F7A',
 			},

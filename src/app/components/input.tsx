@@ -26,7 +26,7 @@ const Input = (props: any) => {
 			onClick={() => (inputRef.current ? inputRef.current.focus() : null)}>
 			<label
 				htmlFor={id}
-				className={`text-sm  text-primary text-primary placeholder-gray-gray4 pt-1.5 ${labelClassName}`}>
+				className={`text-sm text-primary placeholder-gray-gray4 pt-1.5 ${labelClassName}`}>
 				{label} {required && <span className='text-red'>*</span>}
 			</label>
 			<div
