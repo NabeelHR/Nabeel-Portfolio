@@ -4,7 +4,7 @@ import profilePic from '../../../public/landing-image.png';
 
 const Home = () => {
 	return (
-		<div className='flex flex-col mx-auto my-4 px-4 lg:w-1/2 prose md:prose-lg text-justify '>
+		<div className='flex flex-col mx-auto my-4 px-4 lg:w-2/3 prose md:prose-lg text-justify '>
 			<div className=' flex flex-col justify-items-center md:justify-between md:flex-row md:space-x-4'>
 				<Image
 					className='rounded-md self-center max-h-80'
@@ -13,32 +13,34 @@ const Home = () => {
 					height={300}
 					width={300}
 				/>
-				<p className='m-0'>
-					Welcome to my personal website/portfolio. I'm a software engineer
-					living based in Vancouver, BC. I like enjoy gaming, running and being
-					nerd. I started my profesisonal career in 2020 when I completed my BS
-					degree in Computer Science from LUMS and worked in full stack software
-					developer roles for over 2 years at RadicalX, Educative, and Oracle.
-					Recently, I finished my Master's Degree in Comp-Sci from Northeastern
-					University Vancouver.
-				</p>
+				<div>
+					<h3 className='text-left'>
+						Hi, I'm Nabeel and I like solving technical problems at all levels.
+						I also enjoying running and coming up with dad jokes.
+					</h3>
+					<h4 className=''>
+						I'm a software engineer living in Vancouver, BC. I have been
+						programming since 2016 and have over 2 years of work experience in
+						the industry. I recently completed a MS CS degree from from
+						Northeastern University - Vancouver.
+					</h4>
+				</div>
 			</div>
 			<p>
-				I am a software developer and a Master of Science in Computer Science
-				graduate from Northeastern University - Vancouver, with over 2 years of
-				experience in full-stack software engineering. My expertise lies in
-				Full-Stack Web Development, Distributed Systems and Systems Design
-				Engineering, and I'm proficient with Python, Java, TypeScript/JS and Go.
+				My expertise lies in Full-Stack Web Development, Distributed Systems and
+				Systems Design Engineering, and I'm proficient with Python, Java,
+				TypeScript/JS and Golang.
 			</p>
 			<p>
-				Currently I work as a Product Educator at Lululemon, where I share my
-				passion for fitness and wellness with customers and colleagues.
-				Previously, I worked as Software Developer at Oracle, where I shipped
-				features for Oracle Netsuite's HCM solution and developed an internal
-				service to automate API requests' validation. I have also worked with
-				teams of different sizes and stages, from early-stage startups to large
-				corporations, and have contributed to multiple projects and products
-				that have enhanced user experience, performance, and security.
+				I have worked with teams of different sizes and stages, from early-stage
+				startups to large corporations like Oracle, and have contributed to
+				multiple projects and products that have enhanced user experience,
+				performance, and security.
+			</p>
+			<p>
+				I consider myself equally adept in frontend and backend software
+				development. At the moment I'm looking for my next role software
+				development (when I'm not training for my next half-marathon).
 			</p>
 		</div>
 	);

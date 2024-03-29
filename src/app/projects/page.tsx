@@ -3,6 +3,7 @@ import Card from './card';
 import { Experience } from '../interfaces.ts/index';
 import educativePic from '../../../public/educative.jpg';
 import oraclePic from '../../../public/oracle-netsuite.jpg';
+import radiclePic from '../../../public/radical.png';
 
 const experiences: Experience[] = [
 	{
@@ -44,12 +45,11 @@ const experiences: Experience[] = [
 
 const Projects = () => {
 	return (
-		<div className='flex flex-col p-4 divide-y-1 w-full border border-solid'>
+		<div className='flex flex-col p-4 divide-y-1 w-full'>
 			<div className='text-secondary prose w-2/3 mx-auto font-bold text-2xl my-4'>
 				Here is some cool stuff I have worked on
 			</div>
-			{/* <div className='flex flex-col space-y-2 flex-wrap sm:space-y-0 mx-auto sm:flex-row border w-full md:w-3/4 border-violet-900'> */}
-			<div className='flex flex-wrap justify-between mx-auto border w-full md:w-3/4'>
+			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
 				{experiences.map((el) => (
 					<Card xp={el} />
 				))}
