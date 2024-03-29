@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Tabs from './tabs/index';
+import Footer from './footer/index';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,9 +19,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className='flex h-screen bg-themeBg p-0'>
-				<div className='flex flex-col w-full'>
+				<div className='flex flex-col w-full min-h-screen'>
 					<Tabs />
-					{children}
+					<div className='mt-32'>{children}</div>
+					<Footer />
 				</div>
 			</body>
 		</html>
