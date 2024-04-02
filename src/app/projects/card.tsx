@@ -30,7 +30,7 @@ const Card: React.FC<Props> = ({ xp }) => {
 					</div>
 				</div>
 			</div>
-			<div className='flex flex-col sm:flex-row prose-sm space-y-2 sm:space-y-0 sm: justify-evenly mt-2'>
+			<div className='grid grid-cols-2 sm:grid-cols-3 justify-between flex-wrap prose-sm space-y-2 sm:space-y-0 mt-2'>
 				<div>
 					Backend:
 					<div className='not-prose'>

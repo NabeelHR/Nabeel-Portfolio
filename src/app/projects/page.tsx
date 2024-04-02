@@ -39,15 +39,27 @@ const experiences: Experience[] = [
 		frontend: ['JS/TypeScript', 'Material UI'],
 		backend: ['Node', 'Express', 'Firebase', 'Firestore'],
 		technologies: ['Figma', 'GitLab'],
-		imgLink: oraclePic,
+		imgLink: radiclePic,
 	},
 ];
 
 const Projects = () => {
 	return (
 		<div className='flex flex-col p-4 divide-y-1 w-full'>
-			<div className='text-secondary prose w-2/3 mx-auto font-bold text-2xl my-4'>
-				Here is some cool stuff I have worked on
+			<div className='text-secondary  sm:w-2/3 mx-4 sm:mx-auto font-bold text-2xl my-4'>
+				Professional Overview
+			</div>
+			{/* <div className='text-secondary prose w-2/3 mx-auto font-bold text-2xl my-4'> */}
+			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl my-4'>
+				Industry experience in Software Engineering
+			</div>
+			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
+				{experiences.map((el) => (
+					<Card xp={el} />
+				))}
+			</div>
+			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl my-4'>
+				Education
 			</div>
 			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
 				{experiences.map((el) => (
