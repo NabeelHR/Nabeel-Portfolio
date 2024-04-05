@@ -12,29 +12,27 @@ export const Tabs = () => {
 		About: '/about',
 	};
 	return (
-		<div className='flex bg-primary  w-full h-32 fixed'>
-			<div className='flex bg-primary h-32 py-4 pl-2 justify-between w-full'>
-				<div
-					className='font-bold h-20 pl-4 pt-4 text-4xl text-white hover:cursor-pointer'
-					onClick={() => {
-						setActive('');
-						router.push('/home');
-					}}>
-					Nabeel Rizvi
-				</div>
-				<div className='flex md:pr-32'>
-					{Object.keys(tabNames).map((title: string, id) => (
-						<Tab
-							key={id}
-							active={active}
-							title={title}
-							onClick={() => {
-								setActive(title);
-								router.push(tabNames[title]);
-							}}
-						/>
-					))}
-				</div>
+		<div className='flex flex-col sm:flex-row bg-primary sm:h-32 py-4 pl-2 justify-between w-full fixed'>
+			<div
+				className='font-bold h-20 pl-4 pt-4 text-4xl text-white hover:cursor-pointer'
+				onClick={() => {
+					setActive('');
+					router.push('/home');
+				}}>
+				Nabeel Rizvi
+			</div>
+			<div className='flex md:pr-32'>
+				{Object.keys(tabNames).map((title: string, id) => (
+					<Tab
+						key={id}
+						active={active}
+						title={title}
+						onClick={() => {
+							setActive(title);
+							router.push(tabNames[title]);
+						}}
+					/>
+				))}
 			</div>
 		</div>
 	);
