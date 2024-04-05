@@ -15,6 +15,7 @@ const columnHelper = createColumnHelper();
 
 const columns: any[] = [
 	columnHelper.accessor('name', {
+		header: () => 'Activity Title',
 		cell: (props: any) => (
 			<div
 				className='underline text-blue-400 hover:cursor-pointer'
@@ -35,7 +36,7 @@ const columns: any[] = [
 	//   footer: props => props.column.id,
 	// }),
 	columnHelper.accessor('sport_type', {
-		header: () => 'Spoty',
+		header: () => 'Sport Type',
 		cell: (props: any) => {
 			// console.log('props');
 			// console.log(props.row.original.id);
@@ -54,6 +55,12 @@ const columns: any[] = [
 	columnHelper.accessor('average_speed', {
 		header: 'Average Pace in mins/km',
 		cell: (props: any) => <div>{convertPace(props.getValue())}</div>,
+	}),
+	columnHelper.accessor('total_elevation_gain', {
+		header: 'Elavation Climbed (m)',
+		cell: (props: any) => (
+			<div>{props.getValue() > 1 ? props.getValue() : '-'}</div>
+		),
 	}),
 ];
 
