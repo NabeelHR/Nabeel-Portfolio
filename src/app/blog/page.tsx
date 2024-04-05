@@ -15,7 +15,7 @@ const columnHelper = createColumnHelper();
 
 const columns: any[] = [
 	columnHelper.accessor('name', {
-		cell: (props) => (
+		cell: (props: any) => (
 			<div
 				className='underline text-blue-400 hover:cursor-pointer'
 				onClick={() =>
@@ -36,7 +36,7 @@ const columns: any[] = [
 	// }),
 	columnHelper.accessor('sport_type', {
 		header: () => 'Spoty',
-		cell: (props) => {
+		cell: (props: any) => {
 			// console.log('props');
 			// console.log(props.row.original.id);
 			return props.renderValue();
@@ -49,11 +49,11 @@ const columns: any[] = [
 	// }),
 	columnHelper.accessor('distance', {
 		header: 'Distance Covered',
-		cell: (props) => <div>{convertDistance(props.getValue())}</div>,
+		cell: (props: any) => <div>{convertDistance(props.getValue())}</div>,
 	}),
 	columnHelper.accessor('average_speed', {
 		header: 'Average Pace in mins/km',
-		cell: (props) => <div>{convertPace(props.getValue())}</div>,
+		cell: (props: any) => <div>{convertPace(props.getValue())}</div>,
 	}),
 ];
 
@@ -99,9 +99,9 @@ const Blog = () => {
 
 			<table>
 				<thead>
-					{table.getHeaderGroups().map((headerGroup) => (
+					{table.getHeaderGroups().map((headerGroup: any) => (
 						<tr key={headerGroup.id}>
-							{headerGroup.headers.map((header) => (
+							{headerGroup.headers.map((header: any) => (
 								<th key={header.id}>
 									{header.isPlaceholder
 										? null
@@ -115,9 +115,9 @@ const Blog = () => {
 					))}
 				</thead>
 				<tbody>
-					{table.getRowModel().rows.map((row) => (
+					{table.getRowModel().rows.map((row: any) => (
 						<tr key={row.id}>
-							{row.getVisibleCells().map((cell) => (
+							{row.getVisibleCells().map((cell: any) => (
 								<td key={cell.id}>
 									{flexRender(cell.column.columnDef.cell, cell.getContext())}
 								</td>
