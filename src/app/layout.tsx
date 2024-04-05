@@ -21,7 +21,7 @@ export default function RootLayout({
 			<body className='flex h-screen p-0'>
 				<div className='flex flex-col w-full min-h-screen'>
 					<Tabs />
-					<div className='mt-52 sm:mt-32 mb-4'>{children}</div>
+					<div className='mt-32 mb-4'>{children}</div>
 					<Footer />
 				</div>
 			</body>
