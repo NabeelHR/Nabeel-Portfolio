@@ -16,7 +16,7 @@ const Home = () => {
 				<div>
 					<h3 className='text-left'>
 						{`Hi, I'm Nabeel and I like solving technical problems at all levels.
-						I also enjoying running and coming up with dad jokes.`}
+						I also enjoying running and making dad jokes.`}
 					</h3>
 					<h4 className=''>
 						{`I'm a software engineer living in Vancouver, BC. I have been
