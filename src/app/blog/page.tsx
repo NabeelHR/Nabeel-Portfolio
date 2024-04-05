@@ -29,47 +29,31 @@ const columns: any[] = [
 			</div>
 		),
 	}),
-	// columnHelper.accessor(row => row.lastName, {
-	//   id: 'lastName',
-	//   cell: props => <i>{props.getValue()}</i>,
-	//   header: () => <span>Last Name</span>,
-	//   footer: props => props.column.id,
-	// }),
 	columnHelper.accessor('sport_type', {
 		header: () => 'Sport Type',
 		cell: (props: any) => {
-			// console.log('props');
-			// console.log(props.row.original.id);
 			return props.renderValue();
 		},
-		// footer: (props) => props.column.id,
 	}),
-	// columnHelper.accessor('visits', {
-	//   header: () => <span>Visits</span>,
-	//   footer: props => props.column.id,
-	// }),
 	columnHelper.accessor('distance', {
 		header: 'Distance Covered',
 		cell: (props: any) => <div>{convertDistance(props.getValue())}</div>,
 	}),
 	columnHelper.accessor('average_speed', {
-		header: 'Average Pace in mins/km',
+		header: 'Average Pace (mins/km)',
 		cell: (props: any) => <div>{convertPace(props.getValue())}</div>,
 	}),
 	columnHelper.accessor('total_elevation_gain', {
-		header: 'Elavation Climbed (m)',
+		header: 'Elevation Climbed (m)',
 		cell: (props: any) => (
 			<div>{props.getValue() > 1 ? Math.round(props.getValue()) : '-'}</div>
 		),
 	}),
 ];
 
-// const columns: string[] = [name, sport_type, distance, average_speed];
-
 const Blog = () => {
 	const [data, setData] = React.useState(() => [...runData]);
 	const rerender = React.useReducer(() => ({}), {})[1];
-	// console.log(colorsJson);
 
 	const table = useReactTable({
 		data,
@@ -92,9 +76,19 @@ const Blog = () => {
 	console.log('data.length', data.length);
 
 	return (
-		<div className='prose lg:w-2/3 mx-auto'>
-			<h3>Some personal random interests about me:</h3>
-			<p>i like to run</p>
+		<div className='mx-4 md:w-2/3 md:mx-auto py-4'>
+			<div className='prose pb-4'>
+				<h2>Journal</h2>
+				<p>
+					I am currently training for my 3rd half marathon and I'm going to use
+					this app to track my training and progress.
+				</p>
+				<p>
+					I used the Strava API to pull all my data recorded over the last 30
+					months. It includes activity details for some memorable runs, hikes
+					and other activites.
+				</p>
+			</div>
 			{/* <Button /> */}
 			<div className='flex flex-row space-x-2'>
 				<Button label='filter only 10k runs or longer' onClick={filterRuns} />
@@ -104,12 +98,12 @@ const Blog = () => {
 				/>
 			</div>
 
-			<table>
+			<table className='prose w-full mx-auto'>
 				<thead>
 					{table.getHeaderGroups().map((headerGroup: any) => (
 						<tr key={headerGroup.id}>
 							{headerGroup.headers.map((header: any) => (
-								<th key={header.id}>
+								<th key={header.id} className='text-sm'>
 									{header.isPlaceholder
 										? null
 										: flexRender(
@@ -125,7 +119,7 @@ const Blog = () => {
 					{table.getRowModel().rows.map((row: any) => (
 						<tr key={row.id}>
 							{row.getVisibleCells().map((cell: any) => (
-								<td key={cell.id}>
+								<td key={cell.id} className='text-sm'>
 									{flexRender(cell.column.columnDef.cell, cell.getContext())}
 								</td>
 							))}
