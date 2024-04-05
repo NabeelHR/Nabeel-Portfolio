@@ -59,7 +59,7 @@ const columns: any[] = [
 	columnHelper.accessor('total_elevation_gain', {
 		header: 'Elavation Climbed (m)',
 		cell: (props: any) => (
-			<div>{props.getValue() > 1 ? props.getValue() : '-'}</div>
+			<div>{props.getValue() > 1 ? Math.round(props.getValue()) : '-'}</div>
 		),
 	}),
 ];
