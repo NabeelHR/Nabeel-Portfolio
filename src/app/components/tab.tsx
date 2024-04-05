@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 
-export const Tab = (props: Any) => {
+export const Tab = (props: any) => {
 	return (
 		<div
 			onClick={() => props.onClick()}
