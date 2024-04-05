@@ -108,14 +108,13 @@ const Blog = () => {
 					and other activites.
 				</p>
 			</div>
-			{/* <Button /> */}
-			<div className='flex flex-row space-x-2'>
+			{/* <div className='flex flex-row space-x-2'>
 				<Button label='filter only 10k runs or longer' onClick={filterRuns} />
 				<Button
 					label='filter only runs with 5.5 pace or faster'
 					onClick={filterFastRuns}
 				/>
-			</div>
+			</div> */}
 
 			<table className='prose w-full mx-auto'>
 				<thead>
