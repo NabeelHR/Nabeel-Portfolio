@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialLink from '../professional/socialLink';
+import SocialLink from '../components/socialLink';
 import { LinkedInIcon, GitHubIcon, MailIcon } from '../../../public/icons';
 import { GitHubUrl, LinkedInUrl, EmailAddr } from '@/data/personalInfo';
 

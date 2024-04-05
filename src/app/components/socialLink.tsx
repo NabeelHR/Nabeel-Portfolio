@@ -1,4 +1,4 @@
-import Link from '../../../node_modules/next/link';
+import Link from 'next/link';
 
 const SocialLink = ({ className, href, children, icon: Icon }: any) => {
 	return (
@@ -6,7 +6,7 @@ const SocialLink = ({ className, href, children, icon: Icon }: any) => {
 			<Link
 				href={href}
 				className='group flex text-sm font-medium text-zinc-300 transition hover:text-zinc-100 dark:text-zinc-200 dark:hover:text-teal-500'>
-				<Icon className='h-6 w-6 flex-none fill-zinc-300 transition group-hover:fill-zinc-100' />
+				<Icon className='h-5 w-4 flex-none fill-zinc-300 transition group-hover:fill-zinc-100' />
 				<span className='ml-4'>{children}</span>
 			</Link>
 		</li>
