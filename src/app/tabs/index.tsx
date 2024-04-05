@@ -28,7 +28,7 @@ export const Tabs = () => {
 					Nabeel Rizvi
 				</div>
 				<div
-					className='sm:hidden rounded-md bg-primaryHov hover:bg-primaryDark w-12 h-12 ml-16 mt-4 hover:cursor-pointer'
+					className='sm:hidden rounded-md bg-primaryHov hover:bg-primaryDark w-12 h-12 ml-20 mt-4 hover:cursor-pointer'
 					onClick={() => toggle()}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -56,7 +56,7 @@ export const Tabs = () => {
 				</div>
 			</div>
 			{visible ? (
-				<div className='flex flex-col md:pr-32 delay-200 sm:hidden'>
+				<div className='flex flex-col space-y-4 md:pr-32 sm:hidden'>
 					{Object.keys(tabNames).map((title: string, id) => (
 						<Tab
 							key={id}
