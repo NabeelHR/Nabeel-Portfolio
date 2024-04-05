@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className='flex h-screen bg-themeBg p-0'>
+			<body className='flex h-screen p-0'>
 				<div className='flex flex-col w-full min-h-screen'>
 					<Tabs />
 					<div className='mt-32 mb-4'>{children}</div>
