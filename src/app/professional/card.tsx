@@ -15,7 +15,7 @@ const Card: React.FC<Props> = ({ xp }) => {
 			className='rounded-md mt-2 mx-auto lg:mx-0 bg-card  hover:cursor-pointer shadow-md hover:shadow-lg
      hover:bg-cardHov border border-solid border-zinc-500 w-full md:w-120 sm:h-60 p-4'>
 			<div className='flex'>
-				<div className='rounded-full bg-red-600 h-16 w-16'>
+				<div className='rounded-full bg-gray-300 h-16 w-16'>
 					<Image
 						className='self-center max-h-80 rounded-full w-full h-full'
 						src={xp.imgLink}
