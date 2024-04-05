@@ -54,16 +54,16 @@ const Projects = () => {
 				Industry experience in Software Engineering
 			</div>
 			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
-				{experiences.map((el) => (
-					<Card xp={el} />
+				{experiences.map((el, id) => (
+					<Card xp={el} key={id} />
 				))}
 			</div>
 			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl my-4'>
 				Education
 			</div>
 			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
-				{experiences.map((el) => (
-					<Card xp={el} />
+				{experiences.map((el, id) => (
+					<Card xp={el} key={id} />
 				))}
 			</div>
 		</div>

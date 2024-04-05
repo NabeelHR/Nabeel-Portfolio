@@ -35,7 +35,7 @@ const Card: React.FC<Props> = ({ xp }) => {
 					Backend:
 					<div className='not-prose'>
 						{xp.backend.map((el: string, id: number) => (
-							<div>- {el}</div>
+							<div key={id}>- {el}</div>
 						))}
 					</div>
 				</div>
@@ -43,7 +43,7 @@ const Card: React.FC<Props> = ({ xp }) => {
 					Frontend:
 					<div className='not-prose'>
 						{xp.frontend.map((el: string, id: number) => (
-							<div>- {el}</div>
+							<div key={id}>- {el}</div>
 						))}
 					</div>
 				</div>
@@ -51,7 +51,7 @@ const Card: React.FC<Props> = ({ xp }) => {
 					Technologies/devops:
 					<div className='not-prose'>
 						{xp.technologies.map((el: string, id: number) => (
-							<div>- {el}</div>
+							<div key={id}>- {el}</div>
 						))}
 					</div>
 				</div>

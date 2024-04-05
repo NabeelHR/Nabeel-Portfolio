@@ -26,7 +26,7 @@ export const Tabs = () => {
 				<div className='flex md:pr-32'>
 					{Object.keys(tabNames).map((title: string, id) => (
 						<Tab
-							id={id}
+							key={id}
 							active={active}
 							title={title}
 							onClick={() => {
