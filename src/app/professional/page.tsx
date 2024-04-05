@@ -49,7 +49,7 @@ const academics: Education[] = [
 	{
 		uniName: 'Lahore University of Management Sciences',
 		degree: 'Bachelors in Science',
-		major: 'Computer Science',
+		major: 'BSc Computer Science',
 		startDate: 'August 2016',
 		endDate: 'June 2020',
 		imgLink: oraclePic,
@@ -57,7 +57,7 @@ const academics: Education[] = [
 	{
 		uniName: 'Northeastern University',
 		degree: `Master's of Science Science`,
-		major: 'Computer Science',
+		major: 'MSc Computer Science',
 		startDate: 'September 2021',
 		endDate: 'May 2023',
 		imgLink: oraclePic,
@@ -70,7 +70,6 @@ const Projects = () => {
 			<div className='text-secondary  sm:w-2/3 mx-4 sm:mx-auto font-bold text-2xl my-4'>
 				Professional Overview
 			</div>
-			{/* <div className='text-secondary prose w-2/3 mx-auto font-bold text-2xl my-4'> */}
 			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl my-4'>
 				Industry experience in Software Engineering
 			</div>
@@ -86,15 +85,14 @@ const Projects = () => {
 			<div className='mx-auto w-full md:w-3/4'>
 				{academics.map((el, id) => (
 					<div className='my-4' key={id}>
-						<div className='flex w-full justify-between'>
-							<h2 className='text-xl'> {el.uniName}</h2>
+						<div className='flex flex-col sm:flex-row w-full justify-between'>
+							<h2 className='text-xl font-medium'> {el.uniName}</h2>
 							<div>
 								{el.startDate} - {el.endDate}
 							</div>
 						</div>
 						<div className='flex w-2/3 justify-between'>
-							{/* <span> {el.degree}</span> */}
-							<span> {el.major}</span>
+							<span className='font-medium'> {el.major}</span>
 						</div>
 					</div>
 				))}

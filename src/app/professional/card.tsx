@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ xp }) => {
-	console.log(xp);
 	return (
 		<div className='rounded-md mt-2 mx-auto lg:mx-0 bg-card hover:bg-cardHov border border-solid border-gray-600 w-full md:w-120 sm:h-60 p-4'>
 			<div className='flex'>
@@ -15,7 +14,7 @@ const Card: React.FC<Props> = ({ xp }) => {
 					<Image
 						className='self-center max-h-80 rounded-full w-full h-full'
 						src={xp.imgLink}
-						alt={'link broken'}
+						alt={`logo ${xp.companyName}`}
 						// height={300}
 						// width={300}
 					/>
