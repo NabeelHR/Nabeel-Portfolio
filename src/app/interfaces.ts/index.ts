@@ -8,7 +8,16 @@ interface Experience {
 	frontend: string[];
 	backend: string[];
 	technologies: string[];
+	url: string;
+	imgLink: StaticImageData;
+}
+interface Education {
+	uniName: string;
+	degree: string;
+	major: string;
+	startDate: string;
+	endDate: string;
 	imgLink: StaticImageData;
 }
 
-export type { Experience };
+export type { Experience, Education };

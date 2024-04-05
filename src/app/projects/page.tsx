@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './card';
-import { Experience } from '../interfaces.ts/index';
+import EducationCard from './educationCard';
+import { Experience, Education } from '../interfaces.ts/index';
 import educativePic from '../../../public/educative.jpg';
 import oraclePic from '../../../public/oracle-netsuite.jpg';
 import radiclePic from '../../../public/radical.png';
@@ -14,6 +15,7 @@ const experiences: Experience[] = [
 		frontend: ['TypeScript', 'Oracle JET', 'Preact', 'Jest'],
 		backend: ['Java', 'Maven', 'Oracle Cloud Infra', 'JUnit testing'],
 		technologies: ['TeamCity', 'GitLab', 'Perforce'],
+		url: 'https://www.netsuite.com/portal/home.shtml',
 		imgLink: oraclePic,
 	},
 	{
@@ -29,6 +31,7 @@ const experiences: Experience[] = [
 			'PyUnit testing',
 		],
 		technologies: ['Sentry', 'Jenkins', 'GitHub'],
+		url: 'https://www.educative.io/learn/home',
 		imgLink: educativePic,
 	},
 	{
@@ -39,7 +42,26 @@ const experiences: Experience[] = [
 		frontend: ['JS/TypeScript', 'Material UI'],
 		backend: ['Node', 'Express', 'Firebase', 'Firestore'],
 		technologies: ['Figma', 'GitLab'],
+		url: 'https://www.linkedin.com/company/radicalai-li/',
 		imgLink: radiclePic,
+	},
+];
+const academics: Education[] = [
+	{
+		uniName: 'Lahore University of Management Sciences',
+		degree: 'Bachelors in Science',
+		major: 'Computer Science',
+		startDate: 'August 2016',
+		endDate: 'June 2020',
+		imgLink: oraclePic,
+	},
+	{
+		uniName: 'Northeastern University',
+		degree: `Master's of Science Science`,
+		major: 'Computer Science',
+		startDate: 'September 2021',
+		endDate: 'May 2023',
+		imgLink: oraclePic,
 	},
 ];
 
@@ -58,14 +80,32 @@ const Projects = () => {
 					<Card xp={el} key={id} />
 				))}
 			</div>
-			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl my-4'>
+			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl mt-4'>
 				Education
 			</div>
-			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
-				{experiences.map((el, id) => (
-					<Card xp={el} key={id} />
+
+			<div className='mx-auto w-full md:w-3/4'>
+				{academics.map((el, id) => (
+					<div className='my-4'>
+						<div className='flex w-full justify-between'>
+							<h2 className='text-xl'> {el.uniName}</h2>
+							<div>
+								{el.startDate} - {el.endDate}
+							</div>
+						</div>
+						<div className='flex w-2/3 justify-between'>
+							{/* <span> {el.degree}</span> */}
+							<span> {el.major}</span>
+						</div>
+					</div>
 				))}
 			</div>
+
+			{/* <div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
+				{academics.map((el, id) => (
+					<EducationCard xp={el} key={id} />
+				))}
+			</div> */}
 		</div>
 	);
 };
