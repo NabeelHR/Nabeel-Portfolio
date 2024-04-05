@@ -1,3 +1,5 @@
+'use client'; // This is a client component 👈🏽
+
 import React from 'react';
 import { Experience } from '../interfaces.ts/index';
 import Image from '../../../node_modules/next/image';
@@ -8,9 +10,12 @@ interface Props {
 
 const Card: React.FC<Props> = ({ xp }) => {
 	return (
-		<div className='rounded-md mt-2 mx-auto lg:mx-0 bg-card hover:bg-cardHov border border-solid border-gray-600 w-full md:w-120 sm:h-60 p-4'>
+		<div
+			onClick={() => window.open(xp.url, '_blank')}
+			className='rounded-md mt-2 mx-auto lg:mx-0 bg-card  hover:cursor-pointer shadow-md hover:shadow-lg
+     hover:bg-cardHov border border-solid border-zinc-500 w-full md:w-120 sm:h-60 p-4'>
 			<div className='flex'>
-				<div className='rounded-full bg-red-600 h-16 w-16'>
+				<div className='rounded-full bg-gray-300 h-16 w-16'>
 					<Image
 						className='self-center max-h-80 rounded-full w-full h-full'
 						src={xp.imgLink}
