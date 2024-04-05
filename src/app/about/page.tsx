@@ -23,13 +23,14 @@ const About = () => {
 				Visualizing my running stats in a table from the Strava API seemed like
 				a fun way to interact with them.
 			</p>
-			<h4>{`Going forward, I plan to add the following features here:`}</h4>
+			<h4>{`Going forward, I plan to work on the following:`}</h4>
 			<ul>
+				<li>{`Add more functionality to the strava stats table: filtering, sorting and comparing activities.`}</li>
 				<li>{`More fun features tinkering around with the Strava API.`}</li>
 				<li>{`Analytics and viewer count; I want more tools for visitors to interact with`}</li>
 				<li>{`Improving code quality and file structure.`}</li>
 				<li>{`Enhancing frontend and the overall User Experience (work in progresss).`}</li>
-				<li>{`Improving code quality and file structure.`}</li>
+				<li>{`Improving code quality, usability, and file structure.`}</li>
 				<li>{`Adding testing.`}</li>
 			</ul>
 		</div>
