@@ -86,7 +86,7 @@ const Projects = () => {
 
 			<div className='mx-auto w-full md:w-3/4'>
 				{academics.map((el, id) => (
-					<div className='my-4'>
+					<div className='my-4' key={id}>
 						<div className='flex w-full justify-between'>
 							<h2 className='text-xl'> {el.uniName}</h2>
 							<div>
