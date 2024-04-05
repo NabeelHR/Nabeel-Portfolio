@@ -28,6 +28,7 @@ const About = () => {
 				<li>{`Add more functionality to the strava stats table: filtering, sorting and comparing activities.`}</li>
 				<li>{`More fun features tinkering around with the Strava API.`}</li>
 				<li>{`Analytics and viewer count; I want more tools for visitors to interact with`}</li>
+				<li>{`Adding further details about my professional work.`}</li>
 				<li>{`Improving code quality and file structure.`}</li>
 				<li>{`Enhancing frontend and the overall User Experience (work in progresss).`}</li>
 				<li>{`Improving code quality, usability, and file structure.`}</li>

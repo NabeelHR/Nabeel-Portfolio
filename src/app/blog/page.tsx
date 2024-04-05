@@ -99,13 +99,13 @@ const Blog = () => {
 			<div className='prose pb-4'>
 				<h2>Journal</h2>
 				<p>
-					I am currently training for my 3rd half marathon and I'm going to use
-					this app to track my training and progress.
+					{`I am currently training for my 3rd half marathon and I'm going to use
+					this app to track my training and progress.`}
 				</p>
 				<p>
-					I used the Strava API to pull all my data recorded over the last 30
+					{`I used the Strava API to pull all my data recorded over the last 30
 					months. It includes activity details for some memorable runs, hikes
-					and other activites.
+					and other activites.`}
 				</p>
 			</div>
 			{/* <div className='flex flex-row space-x-2'>
