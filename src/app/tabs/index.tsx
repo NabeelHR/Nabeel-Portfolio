@@ -6,17 +6,16 @@ import { useRouter } from '../../../node_modules/next/navigation';
 export const Tabs = () => {
 	const router = useRouter();
 	const [active, setActive] = useState('');
-	// const tabNames: String[] = ['Personal blog', 'Projects', 'About'];
 	const tabNames: { [name: string]: string } = {
 		'Personal Blog': '/blog',
-		Projects: '/projects',
+		Professional: '/professional',
 		About: '/about',
 	};
 	return (
 		<div className='flex bg-primary  w-full h-32 fixed'>
 			<div className='flex bg-primary h-32 py-4 pl-2 justify-between w-full'>
 				<div
-					className='font-bold h-20 pl-4 pt-4 text-2xl text-white hover:cursor-pointer'
+					className='font-bold h-20 pl-4 pt-4 text-4xl text-white hover:cursor-pointer'
 					onClick={() => {
 						setActive('');
 						router.push('/home');
