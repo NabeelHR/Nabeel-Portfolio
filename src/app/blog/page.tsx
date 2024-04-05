@@ -7,6 +7,8 @@ import {
 	flexRender,
 	getCoreRowModel,
 	useReactTable,
+	PaginationState,
+	getPaginationRowModel,
 } from '@tanstack/react-table';
 import { convertPace, convertDistance } from './formats';
 import Button from '../components/button';
@@ -49,16 +51,33 @@ const columns: any[] = [
 			<div>{props.getValue() > 1 ? Math.round(props.getValue()) : '-'}</div>
 		),
 	}),
+	columnHelper.accessor('start_date', {
+		header: 'Date',
+		cell: (props: any) => {
+			const date: Date = new Date(props.getValue());
+			return <div>{date.toDateString()}</div>;
+		},
+	}),
 ];
 
 const Blog = () => {
 	const [data, setData] = React.useState(() => [...runData]);
 	const rerender = React.useReducer(() => ({}), {})[1];
 
+	const [pagination, setPagination] = React.useState<PaginationState>({
+		pageIndex: 0,
+		pageSize: 15,
+	});
+
 	const table = useReactTable({
 		data,
 		columns,
 		getCoreRowModel: getCoreRowModel(),
+		getPaginationRowModel: getPaginationRowModel(), //load client-side pagination code
+		onPaginationChange: setPagination,
+		state: {
+			pagination,
+		},
 	});
 
 	const filterRuns = () => {
@@ -127,6 +146,25 @@ const Blog = () => {
 					))}
 				</tbody>
 			</table>
+			<button
+				className='border rounded p-1'
+				onClick={() => table.previousPage()}
+				disabled={!table.getCanPreviousPage()}>
+				{'<'}
+			</button>
+			<button
+				className='border rounded p-1'
+				onClick={() => table.nextPage()}
+				disabled={!table.getCanNextPage()}>
+				{'>'}
+			</button>
+			<span className='flex items-center gap-1'>
+				<div>Page</div>
+				<strong>
+					{table.getState().pagination.pageIndex + 1} of{' '}
+					{table.getPageCount().toLocaleString()}
+				</strong>
+			</span>
 		</div>
 	);
 };
