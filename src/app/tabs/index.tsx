@@ -6,10 +6,9 @@ import { useRouter } from '../../../node_modules/next/navigation';
 export const Tabs = () => {
 	const router = useRouter();
 	const [active, setActive] = useState('');
-	// const tabNames: String[] = ['Personal blog', 'Projects', 'About'];
 	const tabNames: { [name: string]: string } = {
 		'Personal Blog': '/blog',
-		Projects: '/projects',
+		Professional: '/professional',
 		About: '/about',
 	};
 	return (

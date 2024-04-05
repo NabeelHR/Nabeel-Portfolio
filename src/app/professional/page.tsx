@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './card';
-import EducationCard from './educationCard';
 import { Experience, Education } from '../interfaces.ts/index';
 import educativePic from '../../../public/educative.jpg';
 import oraclePic from '../../../public/oracle-netsuite.jpg';
@@ -100,12 +99,6 @@ const Projects = () => {
 					</div>
 				))}
 			</div>
-
-			{/* <div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
-				{academics.map((el, id) => (
-					<EducationCard xp={el} key={id} />
-				))}
-			</div> */}
 		</div>
 	);
 };
