@@ -55,7 +55,7 @@ const Projects = () => {
 			</div>
 			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
 				{experiences.map((el, id) => (
-					<Card key={id} xp={el} />
+					<Card xp={el} key={id} />
 				))}
 			</div>
 			<div className='text-secondary sm:w-2/3 mx-4 sm:mx-auto font-bold text-xl my-4'>
@@ -63,7 +63,7 @@ const Projects = () => {
 			</div>
 			<div className='flex flex-wrap justify-between mx-auto w-full md:w-3/4'>
 				{experiences.map((el, id) => (
-					<Card key={id} xp={el} />
+					<Card xp={el} key={id} />
 				))}
 			</div>
 		</div>
