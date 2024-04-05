@@ -11,7 +11,6 @@ import {
 	getPaginationRowModel,
 } from '@tanstack/react-table';
 import { convertPace, convertDistance } from './formats';
-import Button from '../components/button';
 
 const columnHelper = createColumnHelper();
 
@@ -95,7 +94,7 @@ const Blog = () => {
 	return (
 		<div className='mx-4 md:w-2/3 md:mx-auto py-4'>
 			<div className='prose pb-4'>
-				<h2>Journal</h2>
+				<h2>Running Journal</h2>
 				<p>
 					{`I am currently training for my 3rd half marathon and I'm going to use
 					this app to track my training and progress.`}
