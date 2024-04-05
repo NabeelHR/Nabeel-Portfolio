@@ -86,8 +86,6 @@ const Blog = () => {
 	const filterFastRuns = () => {
 		setData(
 			data.filter((el) => {
-				// console.log(el, el.type, el.distance);
-				// console.log(el, el.type, el.distance);
 				return el.type === 'Run' && el.average_speed > 1 / ((5.5 * 60) / 1000);
 			})
 		);
