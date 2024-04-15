@@ -137,6 +137,12 @@ const Blog = () => {
 												header.column.columnDef.header,
 												header.getContext()
 										  )}
+									{/* <div>
+										{{
+											asc: ' 🔼up',
+											desc: ' 🔽down',
+										}[header.column.getIsSorted() as string] ?? null}
+									</div> */}
 									{header.column.getCanFilter() ? (
 										<div>
 											<Filter column={header.column} table={table} />
@@ -198,7 +204,9 @@ function Filter({
 	const columnFilterValue = column.getFilterValue();
 
 	return typeof firstValue === 'number' ? (
-		<div className='flex space-x-2' onClick={(e) => e.stopPropagation()}>
+		<div
+			className='flex flex-col space-y-2'
+			onClick={(e) => e.stopPropagation()}>
 			<input
 				type='number'
 				value={(columnFilterValue as [number, number])?.[0] ?? ''}
@@ -226,7 +234,7 @@ function Filter({
 		</div>
 	) : (
 		<input
-			className='w-36 border shadow rounded'
+			className='w-28 border shadow rounded'
 			onChange={(e) => column.setFilterValue(e.target.value)}
 			onClick={(e) => e.stopPropagation()}
 			placeholder={`Search...`}
