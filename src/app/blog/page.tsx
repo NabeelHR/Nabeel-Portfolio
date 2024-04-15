@@ -1,16 +1,20 @@
 'use client'; // This is a client component 👈🏽
 
-import React from 'react';
+import React, { useState } from 'react';
 import runData from '../../data/tbd.json';
 import {
+	Column,
+	Table,
 	createColumnHelper,
 	flexRender,
 	getCoreRowModel,
+	getSortedRowModel,
+	getFilteredRowModel,
 	useReactTable,
 	PaginationState,
 	getPaginationRowModel,
 } from '@tanstack/react-table';
-import { convertPace, convertDistance } from './formats';
+import { convertPace, convertDistance, convertTime } from './formats';
 
 const columnHelper = createColumnHelper();
 
@@ -40,6 +44,10 @@ const columns: any[] = [
 		header: 'Distance Covered',
 		cell: (props: any) => <div>{convertDistance(props.getValue())}</div>,
 	}),
+	columnHelper.accessor('moving_time', {
+		header: 'Time Taken',
+		cell: (props: any) => <div>{convertTime(props.getValue())}</div>,
+	}),
 	columnHelper.accessor('average_speed', {
 		header: 'Average Pace (mins/km)',
 		cell: (props: any) => <div>{convertPace(props.getValue())}</div>,
@@ -63,6 +71,8 @@ const Blog = () => {
 	const [data, setData] = React.useState(() => [...runData]);
 	const rerender = React.useReducer(() => ({}), {})[1];
 
+	const [sorting, setSorting] = useState([]);
+
 	const [pagination, setPagination] = React.useState<PaginationState>({
 		pageIndex: 0,
 		pageSize: 15,
@@ -72,8 +82,10 @@ const Blog = () => {
 		data,
 		columns,
 		getCoreRowModel: getCoreRowModel(),
+		getSortedRowModel: getSortedRowModel(),
 		getPaginationRowModel: getPaginationRowModel(), //load client-side pagination code
 		onPaginationChange: setPagination,
+		getFilteredRowModel: getFilteredRowModel(),
 		state: {
 			pagination,
 		},
@@ -125,6 +137,11 @@ const Blog = () => {
 												header.column.columnDef.header,
 												header.getContext()
 										  )}
+									{header.column.getCanFilter() ? (
+										<div>
+											<Filter column={header.column} table={table} />
+										</div>
+									) : null}
 								</th>
 							))}
 						</tr>
@@ -166,5 +183,57 @@ const Blog = () => {
 		</div>
 	);
 };
+
+function Filter({
+	column,
+	table,
+}: {
+	column: Column<any, any>;
+	table: Table<any>;
+}) {
+	const firstValue = table
+		.getPreFilteredRowModel()
+		.flatRows[0]?.getValue(column.id);
+
+	const columnFilterValue = column.getFilterValue();
+
+	return typeof firstValue === 'number' ? (
+		<div className='flex space-x-2' onClick={(e) => e.stopPropagation()}>
+			<input
+				type='number'
+				value={(columnFilterValue as [number, number])?.[0] ?? ''}
+				onChange={(e) =>
+					column.setFilterValue((old: [number, number]) => [
+						e.target.value,
+						old?.[1],
+					])
+				}
+				placeholder={`Min`}
+				className='w-24 border shadow rounded'
+			/>
+			<input
+				type='number'
+				value={(columnFilterValue as [number, number])?.[1] ?? ''}
+				onChange={(e) =>
+					column.setFilterValue((old: [number, number]) => [
+						old?.[0],
+						e.target.value,
+					])
+				}
+				placeholder={`Max`}
+				className='w-24 border shadow rounded'
+			/>
+		</div>
+	) : (
+		<input
+			className='w-36 border shadow rounded'
+			onChange={(e) => column.setFilterValue(e.target.value)}
+			onClick={(e) => e.stopPropagation()}
+			placeholder={`Search...`}
+			type='text'
+			value={(columnFilterValue ?? '') as string}
+		/>
+	);
+}
 
 export default Blog;
