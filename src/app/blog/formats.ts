@@ -20,13 +20,14 @@ const convertTime = (time: number) => {
 	}:${seconds < 10 ? '0' + seconds : seconds}`;
 };
 
-const convertFilters = (val: number, id: string) => {
-	const foo = {
-		moving_time: (val: number) => val * 60,
-		average_speed: (val: number) => (1 / val) * 60,
-		distance: (val: number) => val * 1000,
-	};
+// const convertFilters = (val: number, id: string) => {
+// 	const foo = {
+// 		moving_time: (val: number) => val * 60,
+// 		average_speed: (val: number) => (1 / val) * 60,
+// 		distance: (val: number) => val * 1000,
+// 	};
 
-	return foo[id](val);
-};
-export { convertPace, convertDistance, convertTime, convertFilters };
+// 	return foo[id](val);
+// };
+
+export { convertPace, convertDistance, convertTime };
